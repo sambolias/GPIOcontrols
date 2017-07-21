@@ -1,3 +1,5 @@
+#include <iostream>
+using std::cout;
 #include <fstream>
 using std::ofstream;
 #include <string>
@@ -16,32 +18,41 @@ int main(int argc, char **argv)
 		status=1;
 		return status;
 	}
-	string pin=argv[0];
-	string command=argv[1];
+	string pin=argv[1];
+	string command=argv[2];
+
+	cout<<"Debug - commands = "<<pin<<" "<<command<<"\n";
 
 	string p1="/sys/class/gpio";
 	string p2=p1+"/gpio"+pin;
+	string path;
 
 	ofstream gpio;
 
 	try
 	{
-		string path=p1+"export";
+		path=p1+"/export";
+		cout<<"Debug - path = "+path;
 		gpio.open(path.c_str());
 		gpio<<pin;
 		gpio.close();
 	}
 	catch(...)	//catch all no throw
-	{}
+	{
+		cout<<"caught something\n";
+	}
 
-	path=p2+"/direction";
-	gpio.open(path.c_string());
+	path=p2+"/direction";	
+	cout<<"Debug - path = "+path;
+	gpio.open(path.c_str());
 	gpio<<"out";
 	gpio.close();
 
 	path=p2+"/value";
-	gpio.open(path.c_string());
+	cout<<"Debug - path = "+path;	
+	gpio.open(path.c_str());
 	gpio<<command;
+
 	gpio.close();
 
 	return status;

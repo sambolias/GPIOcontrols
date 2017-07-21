@@ -4,3 +4,4 @@ start testing now, probably need a controller to control memory leaks
 initial idea pin has to work with input, so from a program
 pout could be a program in PATH pout [pin] [on/off]
 
+controller is dumb idea, just close everytime...

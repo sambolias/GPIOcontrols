@@ -2,6 +2,7 @@ GPIOcontrols
 
 start testing now, probably need a controller to control memory leaks
 initial idea pin has to work with input, so from a program
-pout could be a program in PATH pout [pin] [on/off]
+pout could be a program in PATH pout [pin] [0/1]
 
-controller is dumb idea, just close everytime...
+works for now, but leaving gpio exported could cause memory leaks
+I don't think it is a big deal until working with multiple ports on the machine

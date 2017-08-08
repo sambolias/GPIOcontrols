@@ -57,10 +57,10 @@ int main(int argc, char **argv)
 
 	path=p2+"/value";
 	//cout<<"Debug - path = "+path;	
-	gpio.open(path.c_str());
-	gpio>>value;
+	gpioIn.open(path.c_str());
+	gpioIn>>value;
 
-	gpio.close();
+	gpioIn.close();
 
 	return value;
 }

@@ -5,6 +5,7 @@
 using std::cout;
 #include <fstream>
 using std::ofstream;
+using std::ifstream;
 #include <string>
 using std::string;
 //bad form, but for now, since its only 1 pin being used

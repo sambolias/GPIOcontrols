@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	string pin=argv[1];
 	string command=argv[2];
 
-	cout<<"Debug - commands = "<<pin<<" "<<command<<"\n";
+	//cout<<"Debug - commands = "<<pin<<" "<<command<<"\n";
 
 	string p1="/sys/class/gpio";
 	string p2=p1+"/gpio"+pin;
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	try
 	{
 		path=p1+"/export";
-		cout<<"Debug - path = "+path;
+//		cout<<"Debug - path = "+path;
 		gpio.open(path.c_str());
 		gpio<<pin;
 		gpio.close();
@@ -43,13 +43,13 @@ int main(int argc, char **argv)
 	}
 
 	path=p2+"/direction";	
-	cout<<"Debug - path = "+path;
+////	cout<<"Debug - path = "+path;
 	gpio.open(path.c_str());
 	gpio<<"out";
 	gpio.close();
 
 	path=p2+"/value";
-	cout<<"Debug - path = "+path;	
+//	cout<<"Debug - path = "+path;	
 	gpio.open(path.c_str());
 	gpio<<command;
 

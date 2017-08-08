@@ -23,11 +23,10 @@ int main(int argc, char **argv)
 //		return status;
 		cout<<"not enough arguments\n";
 	}
-	else
-	{
+	
 		string pin=argv[1];
 		string command=argv[2];
-	}
+	
 //	cout<<"Debug - commands = "<<pin<<" "<<command<<"\n";
 
 	string p1="/sys/class/gpio";

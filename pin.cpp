@@ -20,11 +20,14 @@ int main(int argc, char **argv)
 	if(argc < 2)
 	{
 		status=1;
-		return status;
+//		return status;
+		cout<<"not enough arguments\n";
 	}
-	string pin=argv[1];
-	string command=argv[2];
-
+	else
+	{
+		string pin=argv[1];
+		string command=argv[2];
+	}
 //	cout<<"Debug - commands = "<<pin<<" "<<command<<"\n";
 
 	string p1="/sys/class/gpio";
@@ -62,6 +65,8 @@ int main(int argc, char **argv)
 	gpioIn>>value;
 
 	gpioIn.close();
+
+	cout<<"Debug - value of pin "<<pin<<" is "<<value<<"\n";
 
 	return value;
 }
